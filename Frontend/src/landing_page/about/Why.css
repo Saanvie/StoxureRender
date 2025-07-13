@@ -1,0 +1,37 @@
+.about-why {
+  background-color: #ffffff;
+  min-height: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.about-why h3 {
+  color: #333333;
+}
+
+.accordion-item {
+  background-color: #e4e6f8;
+  border: 2px solid #d5d9ff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(213, 217, 255, 0.3);
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: #333333;
+}
+
+.accordion-content {
+  margin-top: 10px;
+  color: #555555;
+}

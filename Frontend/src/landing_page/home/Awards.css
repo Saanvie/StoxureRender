@@ -1,0 +1,38 @@
+.awards-section {
+  background-color: #ffffff;
+
+
+  display: flex;
+  align-items: center;
+}
+
+.award-card {
+  background-color: #ffffff;
+  border: 2px solid #d5d9ff;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 15px rgba(213, 217, 255, 0.2);
+  height: "100px";
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.award-card:hover {
+  background-color: #ffffff;
+  color: #333333;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(213, 217, 255, 0.35);
+}
+
+.icon {
+  color: #d5d9ff;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

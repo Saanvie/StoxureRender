@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 code {
@@ -37,4 +38,49 @@ code {
   font-size: 20px;
   border-radius: 10px;
   border: none;
+}
+
+.btn-primary {
+  background-color: #fbede3;
+  border-color: #fbede3;
+  color: #3B3B3B;
+}
+
+.btn-primary:hover {
+  background-color: #f0e4d3;
+  border-color: #f0e4d3;
+  color: #3B3B3B;
+}
+.btn-stoxure {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: transparent;
+  color: #333333;
+  border: 2px solid #d5d9ff;
+  background-color: #e4e6f8;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-stoxure:hover {
+  background-color: #d5d9ff;
+  color: #333333;
+  border-color: #d5d9ff;
+}
+
+.btn-stoxure-lg {
+  padding: 14px 36px;
+  font-size: 1.25rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#start {
+  scroll-margin-top: 80px; /* adjust to navbar height */
 }

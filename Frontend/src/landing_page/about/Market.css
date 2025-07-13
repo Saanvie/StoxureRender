@@ -1,0 +1,43 @@
+.about-market {
+  background-color: #ffffff;
+  min-height: 70%;
+  display: flex;
+  align-items: center;
+}
+
+.about-market h3 {
+  color: #333333;
+}
+
+.market-card {
+  background-color: #e4e6f8;
+  border: 2px solid #d5d9ff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* ensures full height stretch */
+}
+
+.market-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(213, 217, 255, 0.3);
+}
+
+.market-card .icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.market-card p {
+  color: #333333;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.market-card strong {
+  color: #6c2e1f;
+}
+
+

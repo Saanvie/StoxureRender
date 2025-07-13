@@ -1,22 +1,19 @@
 import React from "react";
+import "./Hero.css";
 
 function Hero() {
   return (
-    <div className="container border-bottom mb-5">
-      <div className="text-center mt-5 p-3">
-        <h1>Technology</h1>
-        <h3 className="text-muted mt-3 fs-4">
-          Sleek, modern and intuitive trading platforms
-        </h3>
-        <p className="mt-3 mb-5">
-          Check out our{" "}
-          <a href="" style={{ textDecoration: "none" }}>
-            investment offerings{" "}
-            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-          </a>
-        </p>
+    <section className="product-hero border-bottom">
+      <div className="container text-center py-5">
+        <h1 className="fw-bold mb-3">Explore the Stoxure Dashboard</h1>
+        <h3 className="text-muted mb-4">
+Master the art of trading in a safe, interactive space designed for future investors.        
+</h3>
+        <a href="/dashboard" className="btn-stoxure btn-stoxure-lg">
+          Try the Dashboard
+        </a>
       </div>
-    </div>
+    </section>
   );
 }
 

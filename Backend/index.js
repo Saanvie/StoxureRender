@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const bcrypt = require("bcryptjs");
 
 const { HoldingsModel } = require("./model/HoldingsModel");
 
@@ -15,8 +16,16 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true,
+}));
+
 app.use(bodyParser.json());
+
+const authRoutes = require("./routes/Authroutes");
+app.use("/api/auth", authRoutes);
+
 
 // app.get("/addHoldings", async (req, res) => {
 //   let tempHoldings = [

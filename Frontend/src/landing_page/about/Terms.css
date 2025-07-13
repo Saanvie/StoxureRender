@@ -1,0 +1,40 @@
+.about-terms {
+  background-color: #ffffff;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+}
+
+.about-terms h3 {
+  color: #333333;
+}
+
+.term-card {
+  background-color: #e4e6f8;
+  border: 2px solid #d5d9ff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+}
+
+.term-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(213, 217, 255, 0.3);
+}
+
+.term-card .icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.term-card h5 {
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.term-card p {
+  color: #555555;
+  font-size: 1rem;
+}

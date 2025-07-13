@@ -1,0 +1,47 @@
+.education-section {
+  background-color: #ffffff;
+    margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.education-section h2 {
+  color: #3a3b3c;
+}
+
+.education-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 2px solid #d5d9ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+  background-color: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(254, 254, 255, 0.35);
+}
+
+.education-card h5 {
+  color: #333333;
+}
+
+.education-card p {
+  color: #555555;
+}
+
+.education-card i {
+  color: #d5d9ff;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,39 @@
+.about-helps {
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+}
+
+.about-helps h3 {
+  color: #333333;
+}
+
+.helps-item {
+  background-color: #e4e6f8;
+  border: 2px solid #d5d9ff;
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.helps-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(213, 217, 255, 0.3);
+}
+
+.helps-icon {
+  font-size: 2rem;
+  color: #6c2e1f;
+  flex-shrink: 0;
+}
+
+.helps-item h5 {
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.helps-item p {
+  color: #555555;
+  font-size: 1rem;
+  margin: 0;
+}

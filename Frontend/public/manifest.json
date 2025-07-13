@@ -1,7 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Stoxure",
+  "name": "Stoxure",
   "icons": [
+    {
+      "src": "Favicon.png",
+      "type": "image/png+xml",
+      "sizes": "any"
+    },
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",

@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
+import "./OpenAccount.css";
 
 function OpenAccount() {
+  useEffect(() => {
+    const el = document.querySelector(".fade-up-open");
+    if (el) {
+      el.classList.add("visible");
+    }
+  }, []);
+
   return (
-    <div className="container p-5 mb-5">
-      <div className="row text-center">
-        <h1 className="mt-5">Open a Zerodha account</h1>
-        <p>
-          Modern platforms and apps, ₹0 investments, and flat ₹20 intraday and
-          F&O trades.
+    <section className="openaccount-section">
+      <div className="container d-flex flex-column justify-content-center align-items-center text-center fade-up-open">
+        <h2 className="fw-bold display-5 mb-3">
+          Ready to Start Your Stoxure Journey?
+        </h2>
+        <p className="fs-5 text-muted mb-4">
+          Join thousands of learners exploring the stock market safely and building their confidence—one click at a time.
         </p>
-        <button
-          className="p-2 btn btn-primary fs-5 mb-5"
-          style={{ width: "20%", margin: "0 auto" }}
-        >
-          Sign up Now
-        </button>
+        <a href="/signup" className="btn-stoxure btn-stoxure-lg">
+          Open Your Free Account
+        </a>
       </div>
-    </div>
+    </section>
   );
 }
 
-export default OpenAccount; 
+export default OpenAccount;

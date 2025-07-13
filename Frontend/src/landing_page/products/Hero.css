@@ -1,0 +1,39 @@
+.product-hero {
+  background-color: #ffffff;
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+}
+
+.product-hero h1 {
+  color: #333333;
+}
+
+.product-hero h3 {
+  color: #555555;
+}
+
+.btn-stoxure {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #e4e6f8;
+  color: #333333;
+  border: 2px solid #d5d9ff;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-stoxure:hover {
+  background-color: #d5d9ff;
+  color: #333333;
+  border-color: #d5d9ff;
+}
+
+.btn-stoxure-lg {
+  padding: 14px 36px;
+  font-size: 1.25rem;
+}

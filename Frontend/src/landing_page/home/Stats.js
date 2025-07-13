@@ -1,48 +1,70 @@
-import React from "react";
+import React, { useEffect } from "react";
+import "./Stats.css";
 
 function Stats() {
+  useEffect(() => {
+    const elements = document.querySelectorAll(".fade-up");
+    elements.forEach((el) => {
+      el.classList.add("visible");
+    });
+  }, []);
+
   return (
-    <div className="container p-3">
-      <div className="row p-5">
-        <div className="col-6 p-5">
-          <h1 className="fs-2 mb-5">Trust with confidence</h1>
-          <h2 className="fs-4">Customer-first always</h2>
-          <p className="text-muted">
-            That's why 1.3+ crore customers trust Zerodha with ₹3.5+ lakh crores
-            worth of equity investments.
-          </p>
-          <h2 className="fs-4">No spam or gimmicks</h2>
-          <p className="text-muted">
-            No gimmicks, spam, "gamification", or annoying push notifications.
-            High quality apps that you use at your pace, the way you like.
-          </p>
-          <h2 className="fs-4">The Zerodha universe</h2>
-          <p className="text-muted">
-            Not just an app, but a whole ecosystem. Our investments in 30+
-            fintech startups offer you tailored services specific to your needs.
-          </p>
-          <h2 className="fs-4">Do better with money</h2>
-          <p className="text-muted">
-            With initiatives like Nudge and Kill Switch, we don't just
-            facilitate transactions, but actively help you do better with your
-            money.
-          </p>
+    <section className="stats-section">
+      <div className="container py-5  border-top">
+        <div className="row align-items-center">
+        <div className="text-center mb-5 fade-up">
+          <h2 className="fw-bold display-5">Trust Your Learning with Stoxure</h2>
         </div>
-        <div className="col-6 p-5">
-          <img src="media/images/ecosystem.png" style={{ width: "90%" }} />
-          <div className="text-center">
-            <a href="" className="mx-5" style={{ textDecoration: "none" }}>
-              Explore our products{" "}
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </a>
-            <a href="" style={{ textDecoration: "none" }}>
-              Try Kite demo{" "}
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </a>
+          {/* LEFT COLUMN - TEXT */}
+          <div className="col-12 col-md-6 mb-5 mb-md-0 fade-up">
+            <div className="stats-card">
+
+
+              <h2 className="fs-4 fw-semibold">Simulated Trading. Real Confidence.</h2>
+              <p className="text-muted">
+                Practice buying and selling stocks in a safe environment, learning how markets work — without risking real money.
+              </p>
+
+              <h2 className="fs-4 fw-semibold">Stay Informed with Market News</h2>
+              <p className="text-muted">
+                Stoxure integrates real financial headlines so you learn how news impacts market movements and prices.
+              </p>
+
+              <h2 className="fs-4 fw-semibold">Simple & Student-Friendly</h2>
+              <p className="text-muted">
+                No clutter, no confusion — just a clean platform designed for learners who want to grow their financial skills.
+              </p>
+
+              <h2 className="fs-4 fw-semibold">Your Gateway to Smart Investing</h2>
+              <p className="text-muted">
+                Build your knowledge, test your strategies, and get ready for real investing with confidence and understanding.
+              </p>
+            </div>
           </div>
+
+          {/* RIGHT COLUMN - IMAGE + LINKS */}
+          <div className="col-12 col-md-6 text-center fade-up">
+            <img
+              src="/DashboardImg.png"
+              alt="Stoxure Dashboard"
+              className="img-fluid mb-4"
+              style={{ marginLeft: "30px", hieght:"150px" }}
+            />
+
+            <div className="d-flex justify-content-center flex-wrap gap-3">
+              <a href="/dashboard" className="btn-stoxure">
+                Explore Dashboard as Guest <i className="bi bi-arrow-right"></i>
+              </a>
+              {/* <a href="#demo" className="btn-stoxure">
+                Try Demo <i className="bi bi-arrow-right"></i>
+              </a> */}
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

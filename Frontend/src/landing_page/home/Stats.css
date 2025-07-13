@@ -1,0 +1,58 @@
+.stats-section {
+  background-color: #ffffff;
+    margin-top: 5%;
+  margin-bottom: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.stats-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stats-section h1 {
+  color: #444546;
+}
+
+.stats-section h2 {
+  color: #3b3b3d;
+  margin-top: 1.5rem;
+}
+
+.stats-section p {
+  color: #555555;
+}
+
+.btn-stoxure {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #e4e6f8;
+  color: #333333;
+  border: 2px solid #d5d9ff;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-stoxure:hover {
+  background-color: #d5d9ff;
+  color: #333333;
+  border-color: #d5d9ff;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
