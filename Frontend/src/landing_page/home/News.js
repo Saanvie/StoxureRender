@@ -9,16 +9,21 @@ function News() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const res = await fetch(
-          `https://newsapi.org/v2/everything?q=stock%20market&language=en&pageSize=3&apiKey=4517aee3b72f4e4e8f8a40afa6c9a8b8`
-        );
+        const baseURL =
+          process.env.REACT_APP_API_URL || "http://localhost:3002";
+
+        const res = await fetch(`${baseURL}/api/news`);
         const data = await res.json();
+
         if (data.status === "ok") {
-          setArticles(data.articles);
+          // For homepage, limit to 3 articles only
+          setArticles(data.articles.slice(0, 3));
         } else {
+          console.error(data);
           setError("Failed to load news.");
         }
       } catch (e) {
+        console.error(e);
         setError("Failed to fetch news data.");
       }
       setLoading(false);
