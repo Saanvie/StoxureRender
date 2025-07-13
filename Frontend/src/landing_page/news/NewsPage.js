@@ -9,16 +9,21 @@ function NewsPage() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const res = await fetch(
-          `https://newsapi.org/v2/everything?q=stock%20market&language=en&pageSize=8&apiKey=4517aee3b72f4e4e8f8a40afa6c9a8b8`
-        );
+        // Use env variable if available, else default to local backend
+        const baseURL =
+          process.env.REACT_APP_API_URL || "http://localhost:3002";
+
+        const res = await fetch(`${baseURL}/api/news`);
         const data = await res.json();
+
         if (data.status === "ok") {
           setArticles(data.articles);
         } else {
+          console.error(data);
           setError("Failed to load news.");
         }
       } catch (e) {
+        console.error(e);
         setError("Failed to fetch news data.");
       }
       setLoading(false);
@@ -39,7 +44,9 @@ function NewsPage() {
 
         {loading && <div className="text-center">Loading news...</div>}
 
-        {error && <div className="alert alert-danger text-center">{error}</div>}
+        {error && (
+          <div className="alert alert-danger text-center">{error}</div>
+        )}
 
         <div className="row g-4">
           {!loading &&
