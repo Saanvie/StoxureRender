@@ -60,11 +60,15 @@ export default function AuthForm() {
       setError("Please fill all required fields.");
       return;
     }
+    const API_BASE_URL =
+      process.env.NODE_ENV === "production"
+        ? "https://stoxure-backend.onrender.com"
+        : "http://localhost:3002";
 
     try {
       const endpoint = isSignup
-        ? "http://localhost:3002/api/auth/signup"
-        : "http://localhost:3002/api/auth/login";
+        ? `${API_BASE_URL}/api/auth/signup`
+        : `${API_BASE_URL}/api/auth/login`;
 
       const payload = isSignup
         ? { email, username, password }
@@ -77,7 +81,7 @@ export default function AuthForm() {
       if (res.data.success) {
         setMessage(
           res.data.message ||
-            (isSignup ? "Signup successful!" : "Login successful!")
+          (isSignup ? "Signup successful!" : "Login successful!")
         );
         setError("");
         setOpen(true);
@@ -94,106 +98,105 @@ export default function AuthForm() {
       console.error(err);
       setError(
         err.response?.data?.message ||
-          (isSignup ? "Signup failed." : "Login failed.")
+        (isSignup ? "Signup failed." : "Login failed.")
       );
     }
-  };
-
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-      }}
-    >
-      <Card variant="outlined">
-        <Box
-          component="form"
-          noValidate
-          sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
-        >
-          <FormControl>
-            <FormLabel htmlFor="email">Email</FormLabel>
-            <TextField
-              error={emailError}
-              helperText={emailError ? "Email is required." : ""}
-              id="email"
-              type="email"
-              name="email"
-              value={email}
-              fullWidth
-              variant="outlined"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </FormControl>
-
-          {isSignup && (
+  }
+    return (
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          minHeight: "100vh",
+        }}
+      >
+        <Card variant="outlined">
+          <Box
+            component="form"
+            noValidate
+            sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
+          >
             <FormControl>
-              <FormLabel htmlFor="username">Username</FormLabel>
+              <FormLabel htmlFor="email">Email</FormLabel>
               <TextField
-                error={usernameError}
-                helperText={usernameError ? "Username is required." : ""}
-                id="username"
-                type="text"
-                name="username"
-                value={username}
+                error={emailError}
+                helperText={emailError ? "Email is required." : ""}
+                id="email"
+                type="email"
+                name="email"
+                value={email}
                 fullWidth
                 variant="outlined"
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </FormControl>
-          )}
 
-          <FormControl>
-            <FormLabel htmlFor="password">Password</FormLabel>
-            <TextField
-              error={passwordError}
-              helperText={passwordError ? "Password is required." : ""}
-              id="password"
-              type="password"
-              name="password"
-              value={password}
-              fullWidth
-              variant="outlined"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </FormControl>
+            {isSignup && (
+              <FormControl>
+                <FormLabel htmlFor="username">Username</FormLabel>
+                <TextField
+                  error={usernameError}
+                  helperText={usernameError ? "Username is required." : ""}
+                  id="username"
+                  type="text"
+                  name="username"
+                  value={username}
+                  fullWidth
+                  variant="outlined"
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </FormControl>
+            )}
 
-          {error && <p style={{ color: "red" }}>{error}</p>}
-          {message && <p style={{ color: "green" }}>{message}</p>}
+            <FormControl>
+              <FormLabel htmlFor="password">Password</FormLabel>
+              <TextField
+                error={passwordError}
+                helperText={passwordError ? "Password is required." : ""}
+                id="password"
+                type="password"
+                name="password"
+                value={password}
+                fullWidth
+                variant="outlined"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </FormControl>
 
-          <Button
-            variant="contained"
-            onClick={handleAuth}
-            sx={{ marginTop: "16px" }}
-          >
-            {isSignup ? "Sign Up" : "Log In"}
-          </Button>
+            {error && <p style={{ color: "red" }}>{error}</p>}
+            {message && <p style={{ color: "green" }}>{message}</p>}
 
-          <Button
-            variant="text"
-            onClick={() => {
-              setIsSignup(!isSignup);
-              setError("");
-              setMessage("");
-            }}
-            sx={{ marginTop: "8px" }}
-          >
-            {isSignup
-              ? "Already have an account? Log In"
-              : "Don't have an account? Sign Up"}
-          </Button>
-        </Box>
+            <Button
+              variant="contained"
+              onClick={handleAuth}
+              sx={{ marginTop: "16px" }}
+            >
+              {isSignup ? "Sign Up" : "Log In"}
+            </Button>
 
-        <Snackbar
-          open={open}
-          autoHideDuration={3000}
-          message={message}
-          onClose={handleClose}
-        />
-      </Card>
-    </Box>
-  );
-}
+            <Button
+              variant="text"
+              onClick={() => {
+                setIsSignup(!isSignup);
+                setError("");
+                setMessage("");
+              }}
+              sx={{ marginTop: "8px" }}
+            >
+              {isSignup
+                ? "Already have an account? Log In"
+                : "Don't have an account? Sign Up"}
+            </Button>
+          </Box>
+
+          <Snackbar
+            open={open}
+            autoHideDuration={3000}
+            message={message}
+            onClose={handleClose}
+          />
+        </Card>
+      </Box>
+    );
+  }
